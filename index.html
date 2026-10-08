@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proofix - Terms of Service & Privacy Policy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#1fa8b0',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-zinc-950 text-zinc-300 font-sans antialiased min-h-screen p-6 md:p-12">
+  <div class="max-w-4xl mx-auto space-y-12">
+
+    <!-- Header -->
+    <header class="border-b border-zinc-800 pb-6">
+      <h1 class="text-3xl font-bold text-white tracking-tight flex items-center gap-3">
+        <span class="text-brand">Proofix</span> Legal Documents
+      </h1>
+      <p class="text-zinc-500 text-sm mt-1">Last updated: October 2026</p>
+    </header>
+
+    <!-- Navigation Pills -->
+    <div class="flex gap-4">
+      <a href="#tos" class="px-4 py-2 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-brand text-sm font-medium transition">Terms of Service</a>
+      <a href="#privacy" class="px-4 py-2 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-brand text-sm font-medium transition">Privacy Policy</a>
+    </div>
+
+    <!-- Section: Terms of Service -->
+    <section id="tos" class="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 md:p-8 space-y-4">
+      <h2 class="text-2xl font-semibold text-white">Terms of Service</h2>
+      <p class="text-sm text-zinc-400">By inviting or using Proofix ("the Bot"), you agree to these Terms.</p>
+      
+      <div class="space-y-3 text-sm leading-relaxed">
+        <h3 class="text-white font-medium">1. Usage Policy</h3>
+        <p>Proofix provides vouching, reputation tracking, and community verification services. You agree not to manipulate the vouch system, submit fraudulent reviews, or automate actions to gain artificial reputation.</p>
+
+        <h3 class="text-white font-medium">2. Disclaimer of Liability</h3>
+        <p>Proofix serves solely as an informational logging and reputation platform. We do not guarantee the legitimacy of any user or transaction. Proofix and its developers are not liable for any financial losses, scams, or damages resulting from interactions between users.</p>
+
+        <h3 class="text-white font-medium">3. Service Availability</h3>
+        <p>We reserve the right to ban servers or users from utilizing the Bot if they violate Discord's Terms of Service or abuse Proofix features. The service is provided "as is" without uptime warranties.</p>
+      </div>
+    </section>
+
+    <!-- Section: Privacy Policy -->
+    <section id="privacy" class="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 md:p-8 space-y-4">
+      <h2 class="text-2xl font-semibold text-white">Privacy Policy</h2>
+      <p class="text-sm text-zinc-400">Proofix respects your privacy and outlines clearly what data is stored and why.</p>
+
+      <div class="space-y-3 text-sm leading-relaxed">
+        <h3 class="text-white font-medium">1. Data We Collect</h3>
+        <p>To provide reputation tracking, Proofix stores:</p>
+        <ul class="list-disc list-inside space-y-1 text-zinc-400 pl-2">
+          <li>Discord User IDs (to link vouches, comments, and profile stats)</li>
+          <li>Discord Guild (Server) IDs and Channel IDs (for configuration and log channels)</li>
+          <li>Vouch content, comments, and timestamps submitted via bot interactions</li>
+        </ul>
+
+        <h3 class="text-white font-medium">2. Data Usage & Storage</h3>
+        <p>Data is stored securely in our MongoDB database solely to display reputation profiles, calculate statistics, and prevent fraud. We never sell or share user data with third parties.</p>
+
+        <h3 class="text-white font-medium">3. Data Deletion (Right to be Forgotten)</h3>
+        <p>Users have the right to request deletion of their stored profile and vouch history at any time. To request data removal, join our official support server or contact the bot administration directly.</p>
+      </div>
+    </section>
+
+    <footer class="text-center text-xs text-zinc-600 border-t border-zinc-900 pt-6">
+      &copy; 2026 Proofix. Not affiliated with or endorsed by Discord Inc.
+    </footer>
+
+  </div>
+</body>
+</html>

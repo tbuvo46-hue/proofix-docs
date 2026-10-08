@@ -1,82 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proofix - Terms of Service & Privacy Policy</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: '#1fa8b0',
-          }
-        }
-      }
-    }
-  </script>
-</head>
-<body class="bg-zinc-950 text-zinc-300 font-sans antialiased min-h-screen p-6 md:p-12">
-  <div class="max-w-4xl mx-auto space-y-12">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proofix – Terms of Service & Privacy Policy</title>
+<meta name="description" content="Terms of Service and Privacy Policy for the Proofix Discord bot.">
+<meta name="theme-color" content="#0d0b1a">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0b1a; --panel:#151227; --line:#272142; --text:#cfc9e4; --dim:#8c85ab;
+  --white:#f7f5ff; --brand:#c25bff; --brand-soft:rgba(194,91,255,.12);
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{background:var(--bg);color:var(--text);font:400 16px/1.7 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--brand);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:3px}
 
-    <!-- Header -->
-    <header class="border-b border-zinc-800 pb-6">
-      <h1 class="text-3xl font-bold text-white tracking-tight flex items-center gap-3">
-        <span class="text-brand">Proofix</span> Legal Documents
-      </h1>
-      <p class="text-zinc-500 text-sm mt-1">Last updated: October 2026</p>
+/* the logo's own winter forest, blurred, fading into the page */
+.glow{position:absolute;inset:0 0 auto 0;height:520px;z-index:-1;overflow:hidden;pointer-events:none}
+.glow::before{content:"";position:absolute;inset:-60px;background:url(logo.png) center 30%/cover;filter:blur(46px) saturate(1.3);opacity:.5}
+.glow::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,11,26,.15),var(--bg) 92%)}
+
+.wrap{position:relative;max-width:1040px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:64px}
+
+.side{position:sticky;top:0;align-self:start;padding:56px 0}
+.brand{font:700 22px/1 var(--head);color:var(--white);display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:40px;height:40px;border-radius:11px;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 6px 22px rgba(194,91,255,.35)}
+.side nav{margin-top:40px;display:grid;gap:4px;font-size:14px}
+.side nav p{color:var(--dim);font-size:13px;margin:18px 0 4px}
+.side nav p:first-child{margin-top:0}
+.side nav a{color:var(--text);text-decoration:none;padding:4px 0 4px 12px;border-left:2px solid var(--line)}
+.side nav a:hover{color:var(--white);border-left-color:var(--brand)}
+
+main{padding:56px 0 40px}
+.intro{display:flex;gap:28px;align-items:flex-start}
+.intro img{width:104px;height:104px;border-radius:26px;flex:none;box-shadow:0 0 0 1px rgba(255,255,255,.14),0 18px 50px rgba(194,91,255,.38)}
+.intro h1{font:700 clamp(32px,4.6vw,48px)/1.08 var(--head);color:var(--white);letter-spacing:-.02em}
+.intro p{margin-top:14px;max-width:54ch;color:var(--text)}
+.intro .meta{margin-top:14px;font-size:14px;color:var(--dim)}
+
+.doc{margin-top:72px;padding-top:40px;border-top:1px solid var(--line)}
+.doc h2{font:700 30px/1.15 var(--head);color:var(--white);letter-spacing:-.01em}
+.doc>.lead{margin-top:12px;max-width:62ch;color:var(--dim)}
+
+.clause{margin-top:36px;max-width:68ch}
+.clause h3{font:700 18px/1.3 var(--head);color:var(--white);display:flex;gap:12px;align-items:baseline}
+.clause h3 span{color:var(--brand);font-variant-numeric:tabular-nums;min-width:18px}
+.clause p{margin-top:8px;padding-left:30px}
+
+.store{margin:14px 0 0 30px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
+.store div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:20px;padding:14px 18px;font-size:15px}
+.store div+div{border-top:1px solid var(--line)}
+.store b{color:var(--white);font-weight:600}
+.store span{color:var(--dim)}
+
+.contact{margin-top:72px;padding:24px 28px;border-radius:12px;background:var(--brand-soft);border:1px solid rgba(194,91,255,.38);max-width:68ch}
+.contact h2{font:700 20px/1.2 var(--head);color:var(--white)}
+.contact p{margin-top:6px}
+
+footer{margin-top:64px;padding:24px 0 56px;border-top:1px solid var(--line);font-size:13px;color:var(--dim)}
+
+@media (max-width:820px){
+  .wrap{grid-template-columns:1fr;gap:0}
+  .side{position:static;padding:28px 0 0}
+  .side nav{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+  .side nav p{display:none}
+  .side nav a{border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+  main{padding-top:32px}
+  .intro{flex-direction:column;gap:20px}
+  .intro img{width:84px;height:84px;border-radius:21px}
+  .clause p{padding-left:0}
+  .store{margin-left:0}
+  .store div{grid-template-columns:1fr;gap:2px}
+}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="wrap">
+
+  <aside class="side">
+    <a class="brand" href="#top"><img src="logo.png" alt="" width="40" height="40">Proofix</a>
+    <nav aria-label="Sections">
+      <p>Terms of Service</p>
+      <a href="#tos">Overview</a>
+      <a href="#tos-usage">Usage policy</a>
+      <a href="#tos-liability">Liability</a>
+      <a href="#tos-availability">Availability</a>
+      <p>Privacy Policy</p>
+      <a href="#privacy">Overview</a>
+      <a href="#priv-collect">Data we collect</a>
+      <a href="#priv-usage">Usage and storage</a>
+      <a href="#priv-delete">Data deletion</a>
+    </nav>
+  </aside>
+
+  <main id="top">
+    <header class="intro">
+      <img src="logo.png" alt="Proofix logo" width="104" height="104">
+      <div>
+        <h1>Terms of Service and Privacy Policy</h1>
+        <p>These documents apply to Proofix, a Discord bot for vouching, reputation tracking and community verification.</p>
+        <p class="meta">Last updated October 2026</p>
+      </div>
     </header>
 
-    <!-- Navigation Pills -->
-    <div class="flex gap-4">
-      <a href="#tos" class="px-4 py-2 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-brand text-sm font-medium transition">Terms of Service</a>
-      <a href="#privacy" class="px-4 py-2 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-brand text-sm font-medium transition">Privacy Policy</a>
-    </div>
+    <section class="doc" id="tos">
+      <h2>Terms of Service</h2>
+      <p class="lead">By inviting or using Proofix ("the Bot"), you agree to these Terms.</p>
 
-    <!-- Section: Terms of Service -->
-    <section id="tos" class="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 md:p-8 space-y-4">
-      <h2 class="text-2xl font-semibold text-white">Terms of Service</h2>
-      <p class="text-sm text-zinc-400">By inviting or using Proofix ("the Bot"), you agree to these Terms.</p>
-      
-      <div class="space-y-3 text-sm leading-relaxed">
-        <h3 class="text-white font-medium">1. Usage Policy</h3>
-        <p>Proofix provides vouching, reputation tracking, and community verification services. You agree not to manipulate the vouch system, submit fraudulent reviews, or automate actions to gain artificial reputation.</p>
+      <div class="clause" id="tos-usage">
+        <h3><span>1</span>Usage policy</h3>
+        <p>Proofix provides vouching, reputation tracking and community verification services. You agree not to manipulate the vouch system, submit fraudulent reviews, or automate actions to gain artificial reputation.</p>
+      </div>
 
-        <h3 class="text-white font-medium">2. Disclaimer of Liability</h3>
+      <div class="clause" id="tos-liability">
+        <h3><span>2</span>Disclaimer of liability</h3>
         <p>Proofix serves solely as an informational logging and reputation platform. We do not guarantee the legitimacy of any user or transaction. Proofix and its developers are not liable for any financial losses, scams, or damages resulting from interactions between users.</p>
+      </div>
 
-        <h3 class="text-white font-medium">3. Service Availability</h3>
-        <p>We reserve the right to ban servers or users from utilizing the Bot if they violate Discord's Terms of Service or abuse Proofix features. The service is provided "as is" without uptime warranties.</p>
+      <div class="clause" id="tos-availability">
+        <h3><span>3</span>Service availability</h3>
+        <p>We reserve the right to ban servers or users from using the Bot if they violate Discord's Terms of Service or abuse Proofix features. The service is provided "as is" without uptime warranties.</p>
       </div>
     </section>
 
-    <!-- Section: Privacy Policy -->
-    <section id="privacy" class="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 md:p-8 space-y-4">
-      <h2 class="text-2xl font-semibold text-white">Privacy Policy</h2>
-      <p class="text-sm text-zinc-400">Proofix respects your privacy and outlines clearly what data is stored and why.</p>
+    <section class="doc" id="privacy">
+      <h2>Privacy Policy</h2>
+      <p class="lead">Proofix respects your privacy. This page states clearly what data is stored and why.</p>
 
-      <div class="space-y-3 text-sm leading-relaxed">
-        <h3 class="text-white font-medium">1. Data We Collect</h3>
+      <div class="clause" id="priv-collect">
+        <h3><span>1</span>Data we collect</h3>
         <p>To provide reputation tracking, Proofix stores:</p>
-        <ul class="list-disc list-inside space-y-1 text-zinc-400 pl-2">
-          <li>Discord User IDs (to link vouches, comments, and profile stats)</li>
-          <li>Discord Guild (Server) IDs and Channel IDs (for configuration and log channels)</li>
-          <li>Vouch content, comments, and timestamps submitted via bot interactions</li>
-        </ul>
+        <div class="store">
+          <div><b>Discord User IDs</b><span>To link vouches, comments and profile stats</span></div>
+          <div><b>Server and Channel IDs</b><span>For configuration and log channels</span></div>
+          <div><b>Vouch content, comments and timestamps</b><span>Submitted via bot interactions</span></div>
+        </div>
+      </div>
 
-        <h3 class="text-white font-medium">2. Data Usage & Storage</h3>
+      <div class="clause" id="priv-usage">
+        <h3><span>2</span>Data usage and storage</h3>
         <p>Data is stored securely in our MongoDB database solely to display reputation profiles, calculate statistics, and prevent fraud. We never sell or share user data with third parties.</p>
+      </div>
 
-        <h3 class="text-white font-medium">3. Data Deletion (Right to be Forgotten)</h3>
-        <p>Users have the right to request deletion of their stored profile and vouch history at any time. To request data removal, join our official support server or contact the bot administration directly.</p>
+      <div class="clause" id="priv-delete">
+        <h3><span>3</span>Data deletion</h3>
+        <p>You have the right to request deletion of your stored profile and vouch history at any time. To request removal, join our official support server or contact the bot administration directly.</p>
       </div>
     </section>
 
-    <footer class="text-center text-xs text-zinc-600 border-t border-zinc-900 pt-6">
-      &copy; 2026 Proofix. Not affiliated with or endorsed by Discord Inc.
-    </footer>
+    <section class="contact" id="contact">
+      <h2>Questions or deletion requests</h2>
+      <p>Join our support server: <a href="https://discord.gg/proofix">discord.gg/proofix</a></p>
+    </section>
 
-  </div>
+    <footer>&copy; 2026 Proofix. Not affiliated with or endorsed by Discord Inc.</footer>
+  </main>
+
+</div>
 </body>
 </html>
